@@ -1,4 +1,4 @@
-from ippursuit import *
+from ippursuit.tools.riskiq import fetch_riskiq_data
 from ippursuit.tools.greynoise import get_greynoise_api
 
 __author__ = 'Michael Rippey'
@@ -26,25 +26,33 @@ def show_menu():
     print('[5]' + ' RiskIQ')
     print('[6]' + ' DNSDB')
     print('[7]' + ' Shodan')
-    print()
-
+    print('[Quit]' + 'q or Q to quit\n')
+   
 
 def main():
-
-    #gn = GreyNoiseFinder()
     
     while True:
         show_menu()
         choice = input('Enter a number: ')
 
-        if choice == '2':
-            print(f'[*] Option {choice} selected')
+        if choice == '1':
+	    pass
+        elif choice == '2':
             get_greynoise_api()
-
-        elif choice == 'q':
+        elif choice == '3':
+	    pass
+        elif choice == '4':
+            pass 
+	elif choice == '5':
+ 	    fetch_riskiq_data()
+        elif choice == '6':
+ 	    pass
+        elif choiec == '7':
+  	    pass
+        elif choice == 'q'.lower():
             raise SystemExit
         else:
-            print('Didnt understand')
+            print(f'{choice} is not an option. Try again...\n')
 
 
 if __name__ == '__main__':
