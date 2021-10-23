@@ -1,0 +1,23 @@
+[greynoise]:
+  api: ""
+ 
+[sectrails]:
+  api: ""
+
+[pulsedive]:
+  api: ""
+
+[shodan]:
+  api: ""
+
+[dnsdb]:
+  api: ""
+
+[riskiq]:
+  api: ""
+  user: ""
+
+[censys]:
+  api: ""
+  
+
