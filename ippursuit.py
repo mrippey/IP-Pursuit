@@ -1,4 +1,4 @@
-from ippursuit.tools.riskiq import fetch_riskiq_data
+from ippursuit.tools.binaryedge import display_binedge_data
 from ippursuit.tools.greynoise import get_greynoise_api
 
 __author__ = 'Michael Rippey'
@@ -22,7 +22,7 @@ def show_menu():
     print('[1]' + ' Query all the below API services simultaneously')
     print('[2]' + ' GreyNoise')
     print('[3]' + ' SecurityTrails')
-    print('[4]' + ' PulseDive')
+    print('[4]' + ' BinaryEdge')
     print('[5]' + ' RiskIQ')
     print('[6]' + ' DNSDB')
     print('[7]' + ' Shodan')
@@ -42,7 +42,7 @@ def main():
         elif choice == '3':
 	    pass
         elif choice == '4':
-            pass 
+            display_binedge_data() 
 	elif choice == '5':
  	    fetch_riskiq_data()
         elif choice == '6':
