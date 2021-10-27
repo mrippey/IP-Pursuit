@@ -1,17 +1,14 @@
-from ippursuit.config_setup import load_yml_config
+from dotenv ipmort load_dotenv
+import os
 from prompt_toolkit import prompt
 import requests
 
 
-def config_exists():
-    return load_yml_config()
-
 
 def request_riskiq_api(query: str) -> requests.Response:
     url = 'https://api.riskiq.net/pt/v2/dns/passive'
-    user = prompt('Enter your RiskIQ username: ')
-    key = prompt('Enter your RiskIQ API key: ')
-    print('IP_Pursuit discovered the following on RiskIQ... \n')
+    user = os.getenv('RISKIQ_USER')
+    key = os.getenv('RISKIQ_KEY')
     print()
     auth = (user, key)
     data = {'query': query}
