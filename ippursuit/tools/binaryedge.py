@@ -12,8 +12,7 @@ def request_binedge_api(target_ip):
     binedge_key = os.getenv("BINEDGE")
     base_url = 'https://api.binaryedge.io/v2/query/ip/'
     headers = {'X-Key': str(binedge_key)}
-    #response = generic_api_request(base_url + target)
-    #target = prompt('ip: ')
+    
     try:
         response = requests.get(base_url + target, headers=headers)
         return response.json()

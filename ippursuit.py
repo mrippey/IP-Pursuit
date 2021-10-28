@@ -1,6 +1,7 @@
 from ippursuit.tools.binaryedge import display_binedge_data
 from ippursuit.tools.greynoise import get_greynoise_api
 from ippursuit.tools.riskiq import fetch_riskiq_data
+
 __author__ = 'Michael Rippey'
 
 
