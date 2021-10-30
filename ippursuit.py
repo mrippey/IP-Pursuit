@@ -1,4 +1,5 @@
 from ippursuit.tools.binaryedge import display_binedge_data
+from ippursuit.tools.dnsdb import fetch_dnsdb_data
 from ippursuit.tools.greynoise import get_greynoise_api
 from ippursuit.tools.riskiq import fetch_riskiq_data
 
@@ -22,11 +23,10 @@ def show_menu():
     print('[MENU]' + ' Select an option below to continue\n')
     print('[1]' + ' Query all the below API services simultaneously')
     print('[2]' + ' GreyNoise')
-    print('[3]' + ' SecurityTrails')
-    print('[4]' + ' BinaryEdge')
-    print('[5]' + ' RiskIQ')
-    print('[6]' + ' DNSDB')
-    print('[7]' + ' Shodan')
+    print('[3]' + ' BinaryEdge')
+    print('[4]' + ' RiskIQ')
+    print('[5]' + ' DNSDB')
+    print('[6]' + ' Shodan')
     print('[Quit]' + 'q or Q to quit\n')
    
 
@@ -41,15 +41,13 @@ def main():
         elif choice == '2':
             get_greynoise_api()
         elif choice == '3':
-	    pass
+	    display_binedge_data()
         elif choice == '4':
-            display_binedge_data() 
+            fetch_riskiq_data() 
 	elif choice == '5':
- 	    fetch_riskiq_data()
+ 	    fetch_dnsdb_data()
         elif choice == '6':
- 	    pass
-        elif choiec == '7':
-  	    pass
+ 	    pass  # shodan
         elif choice == 'q'.lower():
             raise SystemExit
         else:

@@ -3,6 +3,7 @@ import os
 from prompt_toolkit import prompt
 import requests
 
+load_dotenv() 
 
 
 def request_riskiq_api(query: str) -> requests.Response:
@@ -24,5 +25,10 @@ def fetch_riskiq_data():
     data = prompt('IP address: ')
     response = request_riskiq_api(query=data)
     print('IP_Pursuit discovered the following on RiskIQ... \n')
+    
     for items in response['results']:
         print(f'Resovlved: {items["resolve"]}')
+
+    if items['resolve'] is None:
+        print('No resolutions were found')
+ 
