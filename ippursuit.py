@@ -2,6 +2,8 @@ from ippursuit.tools.binaryedge import display_binedge_data
 from ippursuit.tools.dnsdb import fetch_dnsdb_data
 from ippursuit.tools.greynoise import get_greynoise_api
 from ippursuit.tools.riskiq import fetch_riskiq_data
+from ippursuit.tools.shodan import request_shodan_api
+
 
 __author__ = 'Michael Rippey'
 
@@ -47,7 +49,7 @@ def main():
 	elif choice == '5':
  	    fetch_dnsdb_data()
         elif choice == '6':
- 	    pass  # shodan
+ 	    request_shodan_api()
         elif choice == 'q'.lower():
             raise SystemExit
         else:
