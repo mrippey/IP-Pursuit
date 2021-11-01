@@ -24,11 +24,12 @@ def request_riskiq_api(query: str) -> requests.Response:
 def fetch_riskiq_data():
     data = prompt('IP address: ')
     response = request_riskiq_api(query=data)
-    print('IP_Pursuit discovered the following on RiskIQ... \n')
+    print(f'Querying RiskIQ for possible domain name resolutions for {data}')
+    print()
     
-    for items in response['results']:
-        print(f'Resovlved: {items["resolve"]}')
+    for idx, items in enumerate(response['results'], start=1):
+        print(f'{idx}.  {items["resolve"]}')
 
-    if items['resolve'] is None:
-        print('No resolutions were found')
+        if items['resolve'] is None:
+            print('No resolutions were found')
  

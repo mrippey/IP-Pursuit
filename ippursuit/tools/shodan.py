@@ -10,6 +10,7 @@ def request_shodan_api():
     shodan_env = os.getenv('SHODAN')
     api_key = shodan.Shodan(shodan_env)
     target_ip = prompt('IP address: ')
+    print(f'Querying Shodan for port & banner information for {target_ip}')
     try:
         shodan_data = api_key.host(target_ip)
 
@@ -21,4 +22,4 @@ def request_shodan_api():
             """)
 
     except shodan.APIError as err:
-        print(f'Error: {err}')
+        print(f'[-] Error: {err}')
