@@ -22,13 +22,17 @@ def request_riskiq_api(query: str) -> requests.Response:
 
 
 def fetch_riskiq_data():
+    tmp_data = []
     data = prompt('IP address: ')
     response = request_riskiq_api(query=data)
     print(f'Querying RiskIQ for possible domain name resolutions for {data}')
     print()
     
-    for idx, items in enumerate(response['results'], start=1):
-        print(f'{idx}.  {items["resolve"]}')
+    for items in response['results']:
+        tmp_data.append(items['resolve']
+        new_data = ('\n'.join(tmp_data)
+
+        print(f'{new_data}')
 
         if items['resolve'] is None:
             print('No resolutions were found')
